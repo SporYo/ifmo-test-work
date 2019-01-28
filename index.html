@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ITMO test-work</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="#" class="user-form" id="user-form" onsubmit="return false">
+            <h3 class="form-title">Информация о кандидате</h3>
+            <div class="form">
+
+                <div class="row">
+                    <div class="user-surname">
+                        <label for="user-surname">Фамилия <span class="red">*</span></label>
+                        <input type="text" id="user-surname" name="user-surname" placeholder="Введите вашу фамилию"
+                            required />
+                    </div>
+
+                    <div class="user-name">
+                        <label for="user-name">Имя <span class="red">*</span></label>
+                        <input type="text" id="user-name" name="user-name" placeholder="Введите ваше имя" required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="user-phone">
+                        <label for="user-phone">Телефон <span class="red">*</span></label>
+                        <input type="phone" id="user-phone" name="user-phone" class="phone_mask" placeholder="+7 (___) ___ - __ - __"
+                            required />
+                    </div>
+
+                    <div class="user-email">
+                        <label for="user-email">Email <span class="red">*</span></label>
+                        <input type="email" id="user-email" name="user-email" placeholder="primer@corp.ifmo.ru"
+                            required />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="user-date">
+                        <label for="user-date">Дата рождения <span class="red">*</span></label>
+                        <input type="date" id="user-date" name="user-date" value="1990-05-03" required />
+                    </div>
+
+                    <div class="user-foto">
+                        <!-- <label for="user-foto">Фотография</label>
+                            <input type="file" id="user-foto" name="user-foto" data-max-size="2097152" accept="image/jpeg,image/jpg,image/x-png"/> -->
+                        <label class="user-foto__black" for="user-foto">Фотография</label>
+                        <label class="user-foto" for="user-foto">
+                            <svg class="user-foto__img" width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.6805 0H1.31948C0.591954 0 0 0.598448 0 1.33395V14.666C0 15.4016 0.591954 16 1.31948 16H18.6805C19.408 16 20 15.4016 20 14.666V1.33395C20 0.598448 19.4081 0 18.6805 0ZM1.31948 1.14339H18.6805C18.7827 1.14339 18.869 1.23066 18.869 1.33395V10.2123L15.8449 6.28862C15.6206 5.99751 15.2921 5.82303 14.9438 5.81007C14.5955 5.79689 14.2552 5.94659 14.0102 6.22032L10.0865 10.6042C9.99205 10.7097 9.78244 10.7388 9.66323 10.6631L6.43708 8.60908C5.88426 8.257 5.07515 8.29328 4.55528 8.69331L1.13098 11.328V1.33395C1.13098 1.23066 1.21731 1.14339 1.31948 1.14339ZM18.6805 14.8566H1.31948C1.21731 14.8566 1.13098 14.7693 1.13098 14.666V12.7648L5.24028 9.60314C5.38301 9.49338 5.68287 9.47996 5.83449 9.57654L9.06065 11.6305C9.64378 12.0018 10.4628 11.8879 10.9252 11.3713L14.8488 6.98746C14.8724 6.96116 14.8892 6.95315 14.9022 6.95262C14.9121 6.953 14.9313 6.96337 14.9528 6.99134L18.869 12.0724V14.666C18.869 14.7693 18.7827 14.8566 18.6805 14.8566Z" />
+                                <path d="M8.35741 7.74045C9.46192 7.74045 10.3604 6.83207 10.3604 5.71544C10.3604 4.59881 9.46185 3.69043 8.35741 3.69043C7.25289 3.69043 6.35437 4.59889 6.35437 5.71544C6.35437 6.83199 7.25289 7.74045 8.35741 7.74045ZM8.35741 4.83374C8.8383 4.83374 9.22947 5.2292 9.22947 5.71536C9.22947 6.20153 8.8383 6.59699 8.35741 6.59699C7.87652 6.59699 7.48535 6.20153 7.48535 5.71536C7.48535 5.22927 7.87652 4.83374 8.35741 4.83374Z" />
+                            </svg>
+                            <span class="user-foto__color">Прикрепить фото</span> (формат: .png, .jpg, не более 2 Мб)</label>
+                        <input class="user-foto__file" id="user-foto" type="file" name="user-foto">
+                    </div>
+
+
+                </div>
+
+                <div class="user-address">
+                    <label for="user-address">Адрес проживания <span class="red">*</span></label>
+                    <input type="text" id="user-address" name="user-address" placeholder="Введите адрес вручную или поставьте точку на карте, тогда он подставится автоматически"
+                        required />
+                    <div id="map"></div>
+                </div>
+
+                <div class="user-message">
+                    <label for="user-message">Дополнительная информация<span class="user-message-limit">Максимальное
+                            количество символов: 300</span></label>
+                    <textarea id="user-message" name="user-message" placeholder="Введите ваше сообщение" max="300" rows="3"></textarea>
+                </div>
+
+                <p>Поля, отмеченные звездочкой <span class="red">*</span>, обязательны для заполнения</p>
+
+                <button type="submit" class="form-btn" id="submit">Отправить</button>
+
+            </div>
+        </form>
+
+        <div class="modal">
+            <div class="modal-content">
+                <p class="modal-info">Ваше сообщение успешно отправлено</p>
+                <span class="modal-close">&times;</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/libs/maskedinput.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-8UCBI6yWtm8jyloV4M4YjkawfpnDgbo&callback=initMap"
+    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyD-8UCBI6yWtm8jyloV4M4YjkawfpnDgbo"
+    async defer></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
